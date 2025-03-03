@@ -589,7 +589,7 @@ const onAssistantChange = (assistant: Assistant) => {
         <>
         { featureFlags.pluginsOnInput &&
           getSettings(featureFlags).featureOptions.includePluginSelector &&
-            <div className='relative z-20' style={{height: 0}}>
+            <div className='relative z-20 hidden' style={{height: 0}}>
                 <FeaturePlugins
                 plugin={plugin}
                 setPlugin={setPlugin}
@@ -597,11 +597,11 @@ const onAssistantChange = (assistant: Assistant) => {
             </div>
             }
         <div style={{width: chatContainerWidth}}
-            className="absolute bottom-0 left-0 border-transparent bg-gradient-to-b from-transparent via-white to-white pt-6 dark:border-white/20 dark:via-[#343541] dark:to-[#343541] md:pt-2 z-15">
+            className="chat-input absolute border-t border-b bottom-0 left-0 border-blue-500/20 bg-white py-4 dark:bg-blue-500 dark:border-white/20 md:pt-2 z-15">
             
             
             <div
-                className="flex flex-col justify-center items-center stretch mx-2 mt-4 flex flex-row gap-3 last:mb-2 md:mx-4 md:mt-[52px] md:last:mb-6 lg:mx-auto lg:max-w-3xl">
+                className="flex flex-col justify-center items-center stretch mx-2 my-0 flex flex-row gap-3 sm:last:mb-2 md:mx-4 md:mt-[52px] md:last:mb-6 lg:mx-auto lg:max-w-3xl">
                
                {!showScrollDownButton && !messageIsStreaming && !artifactIsStreaming && featureFlags.qiSummary && !showDataSourceSelector &&
                (selectedConversation && selectedConversation.messages.length > 0) &&  (
@@ -657,7 +657,7 @@ const onAssistantChange = (assistant: Assistant) => {
                 {/*    </button>*/}
                 {/*  )}*/}
 
-                <div className="relative mx-2 flex w-full flex-grow flex-col rounded-md border border-black/10 bg-white shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:border-gray-900/50 dark:bg-[#40414F] dark:text-white dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] sm:mx-4" >
+                <div className="relative mx-2 flex w-full flex-grow flex-col rounded-md bg-white dark:bg-[#40414F] dark:text-white sm:mx-4" >
 
                     <div className="flex flex-row items-center">
                         <AssistantsInUse assistants={[selectedAssistant || DEFAULT_ASSISTANT]} assistantsChanged={(asts)=>{
@@ -677,7 +677,7 @@ const onAssistantChange = (assistant: Assistant) => {
                                   setDocuments={setDocuments}/>
                     </div>
 
-                    <div className="flex items-center">
+                    <div className="flex items-center border border-black/10 shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:border-gray-900/50 dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]">
 
                         {featureFlags.dataSourceSelectorOnInput && (
                             <button
@@ -839,7 +839,7 @@ const onAssistantChange = (assistant: Assistant) => {
                             }}
                             placeholder={
                                 // t('Type a message or type "/" to select a prompt...') || ''
-                                "Type a message to chat with Amplify..."
+                                "Type a message to chat with ChattUTC..."
                             }
                             value={content}
                             rows={1}

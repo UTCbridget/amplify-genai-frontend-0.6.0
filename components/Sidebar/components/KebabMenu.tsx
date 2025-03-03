@@ -1,6 +1,6 @@
 import { FC, useContext, useEffect, useRef, useState } from "react";
 import {
-    IconTrash, IconDotsVertical,
+    IconTrash, IconMenu2,
     IconX, IconShare, IconTags,
     IconCheck, IconFolderOpen, 
     IconFolder, IconCalendar, IconAbc,
@@ -104,7 +104,6 @@ interface Props {
         if (checkingItemType) clear();
         setIsMenuOpen(!isMenuOpen);
         handleSearchTerm('');
-
     }
     const clear = () => {
         homeDispatch({field: 'checkingItemType', value: null});
@@ -357,18 +356,18 @@ interface Props {
                 </div> :
                 <button
                     disabled={isSyncing}
-                    className={`outline-none focus:outline-none p-0.5 ${isMenuOpen ? 'bg-neutral-200 dark:bg-[#343541]/90' : ''}`}
+                    className={`menu-icon-wrapper outline-none focus:outline-none p-0.5 ${isMenuOpen ? 'bg-neutral-200 dark:bg-[#343541]/90' : ''}`}
                     onClick={toggleDropdown}>
-                    <IconDotsVertical size={20} className="flex-shrink-0 text-neutral-500 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100"/>
+                    <IconMenu2 size={32} className="flex-shrink-0 text-neutral-500 dark:text-white hover:text-neutral-900 dark:hover:text-yellow-500"/>
                 </button>
+                
             }
             
             {isMenuOpen && (
                 <div
                     ref={menuRef}
-                    className="ml-[-200%] absolute bg-neutral-100 dark:bg-[#202123] text-neutral-900 rounded border border-neutral-200 dark:border-neutral-600 dark:text-white z-50"
+                    className="conversation-menu ml-[-150%] absolute bg-white text-blue-500 dark:bg-blue-800 dark:text-white z-50 w-[100px] font-condensed z-50"
                     style={{ top: '90%', pointerEvents: 'auto' }}>
-                    <div>
                         <KebabActionItem label="Delete" type={label as CheckItemType} handleAction={()=>{isConvSide ? handleDeleteConversations() : handleDeletePrompts()}} 
                                          setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconTrash size={14} />} />
                         <KebabActionItem label="Share" type={label as CheckItemType} handleAction={()=>{setIsShareDialogVisible(true)}} setIsMenuOpen={setIsMenuOpen} 
@@ -377,7 +376,7 @@ interface Props {
                                          setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconTags size={14} />} />}
                         
                         {isConvSide  &&  <KebabItem label="Clean" handleAction={() => { cleanEmptyConversations() }} icon={<IconTrashFilled size={14} />} title="Remove Empty Conversations" />}
-                        <KebabMenuItems label="Folders" xShift={175} minWidth={86}>
+                        <KebabMenuItems label="Folders" xShift={175} minWidth={86} >
 
                             <KebabMenuItems label="Sort" xShift={160}>
                                 <KebabItem label="Name" handleAction={() => {setFolderSort('name')}} icon={<IconAbc size={18}/>}  title="Sort Folders By Name"/>
@@ -392,12 +391,12 @@ interface Props {
                             <KebabItem label="Close All" handleAction={() => { openCloseFolders(false) }} icon={<IconFolder size={14}/>}   title="Close All Folders"/>
                             
                         </KebabMenuItems>
-                    </div>
                 </div>
             )}
           </div>
+          
         </div>
-
+        <svg className="utc-custom-separator" viewBox="0 0 350 36"><path fill="#fdb736" d="M131.2 278.4H60.8l16-67.2h70.4l-16 67.2zM256 211.2H182.4l-12.8 67.2H240l16-67.2zm105.6 0H291.2l-16 67.2h70.4l16-67.2zm108.8 0H400l-16 67.2h70.4l16-67.2zm105.6 0h-70.4l-16 67.2H560l16-67.2z"></path></svg>
         {isShareDialogVisible && (<ShareAnythingModal
         open={isShareDialogVisible}
         onCancel={()=>{

@@ -12,9 +12,9 @@ export const CloseSidebarButton = ({ onClick, side, isDisabled}: Props) => {
     <>
       <button
         className={`fixed top-5 ${
-          side === 'right' ? 'right-[280px]' : 'left-[280px]'
+          side === 'right' ? 'hidden' : 'mt-[-6px] sm:mt-0 left-[90%] sm:left-[280px]'
         } z-50 h-7 w-7 hover:text-gray-400 dark:text-neutral-200 dark:hover:text-gray-300 sm:top-0.5 sm:${
-          side === 'right' ? 'right-[280px]' : 'left-[280px]'
+          side === 'right' ? 'hidden' : 'left-[280px]'
         } sm:h-8 sm:w-8 sm:text-neutral-700`}
         onClick={onClick}
         title="Collapse Sidebar"
@@ -33,9 +33,9 @@ export const OpenSidebarButton = ({ onClick, side, isDisabled }: Props) => {
   return (
     <button
       className={`fixed top-2.5 ${
-        side === 'right' ? 'right-2' : 'left-2'
+        side === 'right' ? 'hidden' : 'left-2'
       } z-50 h-7 w-7 text-white hover:text-gray-400 dark:text-neutral-200 dark:hover:text-gray-300 sm:top-0.5 sm:${
-        side === 'right' ? 'right-2' : 'left-2'
+        side === 'right' ? 'hidden' : 'left-2'
       } sm:h-8 sm:w-8 sm:text-neutral-700`}
       onClick={onClick}
       title="Expand Sidebar"

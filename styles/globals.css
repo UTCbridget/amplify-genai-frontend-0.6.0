@@ -5,18 +5,33 @@
 @import url('https://fonts.googleapis.com/css2family=family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+  --lt-blue: #e7eaee;
+  --lt-blue-20: rgba(231,234,238,.2);
   --blue: #112e51;
+  --blue-10: rgba(17, 46, 82, 0.1);
   --blue-50: rgba(17, 46, 82, 0.5);
+  --blue-75: rgba(17, 46, 82, 0.75);
   --dk-blue: #05152b;
   --gold: #fdb736;
-  --white-50: rgba(255 255 255 / 0.5);
-  --white-75: rgba(255 255 255 / 0.75);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-75: rgba(255, 255, 255, 0.75);
   --utc-transition: all 0.4s ease-in-out;
   --gray-border: 1px #555 solid;
   --gray: #ccc;
   --transparent: transparent;
 }
-
+.light .bg-neutral-500, .light .bg-neutral-200 {background-color: white}
+.light .text-neutral-700, .light .text-neutral-900, .light .text-gray-600, .light .text-neutral-800, .light .hover\:text-neutral-900:hover {color: var(--blue);opacity:1;}
+.light .group.md\:px-4.bg-gray-50.text-gray-800.border-t.dark\:border-yellow-500.dark\:bg-blue-500\/20.dark\:text-yellow-500.pt-4.pl-4 {
+  background-color: transparent;
+  border-color: var(--gold);
+}
+.h-\[162px\].bg-white.dark\:bg-\[\#343541\] { background: var(--transparent);}
+.light .group.md\:px-4.bg-gray-50.text-gray-800.border-b.dark\:border-yellow-500.dark\:bg-blue-500\/50.pt-4.pl-4 {
+  background: var(--lt-blue-20);
+  border-color: var(--gold);
+  border-top: 1px solid var(--blue-10);
+}
 /****Initial css set-up****/
 html {
   /*Striped bg
@@ -53,7 +68,6 @@ h6 {
   font-family: Oswald, sans-serif;
   font-weight: bold;
 }
-
 h3 {
   font-weight: 200;
 }
@@ -66,10 +80,26 @@ h3 {
     #12263c 20px
   );
 }
-
 /***Buttons***/
 button {
   border-radius: 0;
+}
+.light button.px-3.py-2.rounded-t.text-gray-400 svg {
+  color: var(--blue-50);
+}
+.light button.px-3.py-2.rounded-t.text-gray-400:hover svg, .light .hover\:text-gray-400:hover  {
+  color: var(--blue);
+}
+.light button.px-3.py-2.rounded-t.border-l.border-t.border-r.shadow-\[1px_0_1px_rgba\(0\,0\,0\,0\.1\)\,-1px_0_1px_rgba\(0\,0\,0\,0\.1\)\],
+.light button.text-sidebar.flex.w-\[205px\].flex-shrink-0.justify-between.cursor-pointer.select-none.items-center.gap-3.rounded-md.border.border-neutral-300.transition-colors.duration-200.hover\:bg-blue-500:hover,
+.light button[title="Create Folder"]:hover {
+  background: var(--lt-blue);
+}
+.light button.menu-icon-wrapper.outline-none.focus\:outline-none.p-0\.5 svg {
+  stroke: var(--blue);
+}
+.light .bg-neutral-100, .light .bg-neutral-500 {
+
 }
 .dark button svg,
 .dark button.dark\:text-neutral-100,
@@ -84,7 +114,6 @@ button {
   opacity: 1;
   background: none;
 }
-
 button.text-sidebar svg,
 button.settings-menu svg {
   transition: var(--utc-transition);
@@ -125,16 +154,45 @@ button.text-sidebar:hover svg.tabler-icon-rocket {
 hover:text-blue-500 svg {
   fill: var(--blue);
 }
-
 .dark button.p-1\.5.dark\:bg-neutral-600 svg {
   color: #fff !important;
 }
-
 /***settings panels****/
+.light .fixed.top-0.left-0.flex.h-full.w-\[280px\].flex-none.border-r.dark\:border-r-\[\#202123\].flex-col.space-y-0.bg-white.text-black.dark\:text-white.bg-\[\#f3f3f3\].dark\:bg-\[\#202123\].text-\[14px\].sm\:relative.sm\:top-0 {
+  background: var(--transparent);
+}
+.light button.p-1\.5.dark\:bg-neutral-600:hover,
+.light .dark\:bg-\[\#2b2c36\],
+.light\:bg-\[\#22232b\],
+.light\:border-neutral-600.inline-block.transform.rounded-lg.border.border-gray-300.bg-neutral-100.px-4.pb-4.text-left.align-bottom.shadow-xl.transition-all.dark\:bg-\[\#22232b\].sm\:my-8.sm\:min-h-\[636px\].sm\:w-full.sm\:p-4.sm\:align-middle{
+  background: var(--lt-blue) !important;
+}
+.light button.min-w-\[20px\].p-1.text-neutral-500.dark\:text-neutral-400.hover\:text-neutral-900.dark\:hover\:text-neutral-100 {
+  color: var(--blue);
+}
+.light button.min-w-\[20px\].p-1.text-neutral-500.dark\:text-neutral-400.hover\:text-neutral-900.dark\:hover\:text-neutral-100:hover {
+  color: var(--gold);
+}
+.light button.bg-neutral-100:hover {background-color: var(--lt-blue)!important;}
+.light
+  .flex.flex-row.gap-2.mb-2.w-full.fixed.bottom-0.left-0.px-4.pb-2
+  button[type='button']:hover,
+.light .dark\:border-neutral-600.inline-block.transform.rounded-lg.border.border-gray-300.bg-neutral-100.px-4.pb-4.text-left.align-bottom.shadow-xl.transition-all.dark\:bg-\[\#22232b\].sm\:my-8.sm\:min-h-\[636px\].sm\:w-full.sm\:p-4.sm\:align-middle
+  button[type='button']:hover,
+.light  button[type='button'].dark\:hover\:bg-neutral-300:hover {
+  background: var(--blue)!important;
+  color: white;
+}
+.light button.p-1\.5.dark\:bg-neutral-600:hover,
+.light .dark\:bg-\[\#2b2c36\],
+.light .dark\:bg-\[\#22232b\],
+.light .dark\:border-neutral-600.inline-block.transform.rounded-lg.border.border-gray-300.bg-neutral-100.px-4.pb-4.text-left.align-bottom.shadow-xl.transition-all.dark\:bg-\[\#22232b\].sm\:my-8.sm\:min-h-\[636px\].sm\:w-full.sm\:p-4.sm\:align-middle{
+  background: var(--lt-blue) !important;
+}
 .dark button.p-1\.5.dark\:bg-neutral-600:hover,
 .dark .dark\:bg-\[\#2b2c36\],
-.dark\:bg-\[\#22232b\],
-.dark\:border-neutral-600.inline-block.transform.rounded-lg.border.border-gray-300.bg-neutral-100.px-4.pb-4.text-left.align-bottom.shadow-xl.transition-all.dark\:bg-\[\#22232b\].sm\:my-8.sm\:min-h-\[636px\].sm\:w-full.sm\:p-4.sm\:align-middle{
+.dark .dark\:bg-\[\#22232b\],
+.dark .dark\:border-neutral-600.inline-block.transform.rounded-lg.border.border-gray-300.bg-neutral-100.px-4.pb-4.text-left.align-bottom.shadow-xl.transition-all.dark\:bg-\[\#22232b\].sm\:my-8.sm\:min-h-\[636px\].sm\:w-full.sm\:p-4.sm\:align-middle{
   background: var(--blue) !important;
 }
 .border-\[\#0dcfda\].dark\:border-opacity-50 {
@@ -152,11 +210,6 @@ button.text-sidebar,
 button[title='Create Folder'] {
   margin-top: 24px;
 }
-button[title='Workspaces'],
-button.flex.w-full.cursor-pointer.select-none.items-center.gap-3.rounded-md.py-3.px-3.text-\[14px\].leading-3.dark\:text-white.transition-colors.duration-200.hover\:bg-neutral-200.dark\:hover\:bg-\[\#343541\]\/90:first-child {
-  display: none;
-}
-
 .dark button.p-1\.5.dark\:bg-neutral-600:hover svg {
   color: var(--gold) !important;
 }
@@ -181,17 +234,22 @@ button.flex.w-full.cursor-pointer.select-none.items-center.gap-3.rounded-md.py-3
 button[title='Sign Out'] {
   width: 100%;
 }
-button[title='Sign Out']:hover {
+.light button[title='Sign Out']:hover {
+  background: var(--lt-blue);
+}
+.light button[title='Sign Out']:hover svg {
+  opacity: 1;
+  stroke: var(--blue);
+}
+.dark button[title='Sign Out']:hover {
   background: var(--blue);
   color: var(--gold);
 }
-button[title='Sign Out']:hover svg {
+.dark button[title='Sign Out']:hover svg {
   opacity: 1;
   stroke: var(--gold);
 }
-button[title='Chat Settings'] svg {
-  display:none;
-}
+
 /****icons****/
 .tabler-icon {
   @apply dark:hover:text-yellow-500;
@@ -207,9 +265,59 @@ circle {
   stroke: var(--gold);
 }
 /***conversation sidebar menu***/
-.dark .conversation-prompt-wrapper {
+.conversation-prompt-wrapper {
   padding-top: 24px;
-  color: var(----white-75) !important;
+}
+.light .conversation-prompt-wrapper {
+  color: var(--blue-75) !important;
+}
+.conversation-prompt-wrapper > div:first-child {
+  border-bottom: none;
+}
+.conversation-menu .w-\[72px\],
+.conversation-menu [title='Remove Empty Conversations'] button,
+.conversation-menu .pr-1.pl-1 {
+  width: 102%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 0;
+  border: var(--gray-border);
+  margin-top: -2px;
+}
+.light .conversation-menu button {
+  color: var(--blue);
+}
+.light .conversation-menu .w-\[72px\],
+.light .conversation-menu [title='Remove Empty Conversations'] button,
+.light .conversation-menu .pr-1.pl-1 {
+  background-color: white;
+}
+.light .conversation-menu .pr-1.pl-1:hover {
+  background-color: var(--lt-blue) !important;
+  color: var(--blue);
+}
+.conversation-menu svg {
+  display: none;
+}
+.light .bg-\[\#202123\] {
+  background-color: white !important;
+}
+.light .conversation-prompt-wrapper .bg-neutral-200 {
+  background: var(--transparent);
+}
+.light .conversation-prompt-wrapper .bg-neutral-200 svg {
+  stroke: var(--blue);
+  color: var(--blue);
+}
+.light .hover\:bg-neutral-200:hover {
+  background-color: var(--lt-blue);
+}
+.light .conversation-prompt-wrapper .bg-neutral-200 svg:hover {
+  stroke: var(--gold);
+  color: var(--gold);
+}
+.dark .conversation-prompt-wrapper {
+  color: var(--white-75) !important;
 }
 .dark .conversation-prompt-wrapper > div:first-child {
   border-bottom: none;
@@ -217,13 +325,7 @@ circle {
 .dark .conversation-menu .w-\[72px\],
 .dark .conversation-menu [title='Remove Empty Conversations'] button,
 .dark .conversation-menu .pr-1.pl-1 {
-  width: 102%;
-  padding-top: 6px;
-  padding-bottom: 6px;
   background-color: var(--blue);
-  border-radius: 0;
-  border: var(--gray-border);
-  margin-top: -2px;
 }
 .dark .conversation-menu .pr-1.pl-1:hover {
   background-color: var(--gold) !important;
@@ -232,7 +334,6 @@ circle {
 .dark .conversation-menu svg {
   display: none;
 }
-
 .dark .bg-\[\#202123\] {
   background-color: var(--blue) !important;
 }
@@ -251,9 +352,21 @@ circle {
 pre:has(div.codeblock) {
   padding: 0;
 }
-input:focus-visible,
-textarea:focus-visible {
+.light input:focus-visible,
+.light textarea:focus-visible {
+  outline: 2px solid var(--blue);
+}
+.dark input:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--gold);
+}
+.dark input[placeholder] {
+  color: white !important;
+}
+.dark input[type='range'] {
+  accent-color: var(--gold);
+  height: 6px;
+  outline: none;
+  background: none!important;
 }
 input[placeholder] {
   color: white !important;
@@ -267,9 +380,21 @@ input[placeholder] {
 .light input[type='range'] {
   accent-color: var(--blue);
   outline: none;
+  background: none!important;
+}
+.appearance-none {
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  appearance: auto;
 }
 .prose {
   max-width: unset;
+}
+.user-chat-actions,
+.chattutc-chat-actions {
+  width: fit-content;
+  border-top: var(--gray-border);
+  margin-top: 12px;
 }
 .user-chat-actions,
 .chattutc-chat-actions {
@@ -310,12 +435,10 @@ button[title="Branch Into A Conversation"] {
   width: 6px;
   height: 6px;
 }
-
 /****shift user avatar****/
 .relative.left-\[-12px\].flex.items-center.justify-center {
   left:0!important
 }
-
 /****mantine overrides****/
 .mantine-Paper-root .mantine-LoadingOverlay-root {
   background: rgba(17, 46, 81, 0.5);
@@ -343,7 +466,6 @@ button[title="Branch Into A Conversation"] {
 .mantine-TableHeadCell-Content-Wrapper {
   color: var(--gold);
 }
-
 .model-select-wrapper {
   width: 100%; /* Ensure the wrapper is full width */
   display: block;
@@ -351,7 +473,6 @@ button[title="Branch Into A Conversation"] {
 .custom-select {
   min-width: 100%;
 }
-
 /**remove rounded corners***/
 .rounded-xs,
 .rounded-sm,
@@ -368,7 +489,6 @@ button[title="Branch Into A Conversation"] {
 .rounded-full {
   border-radius: 0 !important;
 }
-
 /* Override dark mode background */
 .dark .dark\:bg-\[\#202123\],
 .dark .dark\:bg-\[\#343541\],
@@ -383,7 +503,6 @@ button[title="Branch Into A Conversation"] {
 .dark .hover\:bg-neutral-200:hover {
   background-color: var(--blue);
 }
-
 .dark .dark\:to-\[\#343541\],
 .to-white {
   --tw-gradient-to: var(--transparent);
@@ -405,13 +524,17 @@ button[title="Branch Into A Conversation"] {
 .right-0 {
   display: none;
 }
-
 /****Make adjustments to "Start a new conversation"***/
 .container > div > div:nth-child(2) > div > div:nth-child(1),
 .container > div > div > div:nth-child(2) {
   display: none;
 }
-
+.mx-auto.flex.flex-col.space-y-1.md\:space-y-8.px-3.pt-5.md\:pt-10.sm\:max-w-\[600px\] {
+  margin-top: 60px;
+}
+nav .max-w-\[240px\].overflow-hidden.text-ellipsis.whitespace-nowrap, nav .max-w-\[240px\].overflow-hidden.text-ellipsis.whitespace-nowrap + svg {
+  visibility: hidden;
+}
 /****But keep the prose***/
 .container > div > div:nth-child(2) > div > div:nth-child(1).prose,
 .container > div > div > div:nth-child(2).prose {
@@ -419,7 +542,6 @@ button[title="Branch Into A Conversation"] {
   margin-right: 0;
   padding-left: 24px;
 }
-
 .power-c {
   border-radius: 50%;
 }
@@ -428,42 +550,57 @@ button[title="Branch Into A Conversation"] {
 .items-center.sticky.top-0.py-3.z-10 button {
   color: var(--transparent);
 }
-.items-center.sticky.top-0.py-3.z-10 button:first-child {
-  display: none;
-}
-
 /***remove default background images****/
-
-.w-14.h-12.flex-none.bg-cover.rounded-l-xl.text-center.overflow-hidden {
-  background-image: none !important;
-  max-width: 100% !important;
+.w-14.h-12.flex-none.bg-cover.rounded-l-xl.text-center.overflow-hidden
+ {
+  background-image: none!important;
+  max-width:100%!important;
 }
 /***fix workspace buttons***/
-.items-center.sticky.top-0.py-3.z-10.flex.justify-center.border.border-b-neutral-300.bg-neutral-100.text-sm.text-neutral-500.dark\:border-none.dark\:bg-\[\#444654\].dark\:text-neutral-200 {
-  @apply bg-blue-900;
-  color: var(--transparent);
+.top-workspace-bar {
   justify-content: end;
   padding-right: 24px;
-  background: var(--blue);
   height: 48px;
   left: 0;
   width: 100%;
   opacity: 1;
 }
-
-.items-center.sticky.top-0.py-3.z-10 button.hover\:opacity-50:hover {
+.workspace-text, button[title="Workspaces"] {
+  display:none
+}
+.light .top-workspace-bar {
+  background: white;
+  border-color: var(--lt-blue);
+}
+.top-workspace-bar .share-button {
+  display:none;
+}
+.top-workspace-bar button {
+  -webkit-appearance: button;
+  background-color: unset;
+  background-image: none;
+  width: 36px;
+  height: 36px;
+  color: var(--blue) !important;
+  opacity: 1;
+  display: block;
+  fill: var(--blue)!important;
+  stroke: var(--blue)!important;
+}
+.top-workspace-bar button svg {
+  width:24px;
+  height:24px;
+}
+.dark .top-workspace-bar button:hover {
+  opacity: 1;
+  color: var(--gold);
+}
+.dark .top-workspace-bar{
+  background: var(--blue)!important;
+}
+.top-workspace-bar {
   opacity: 1;
 }
-/****remove model*****/
-.border-b.border-neutral-200.p-4.dark\:border-neutral-600.md\:rounded-lg.md\:border.shadow-\[0_2px_4px_rgba\(0\,0\,0\,0\.1\)\].dark\:shadow-\[0_2px_4px_rgba\(0\,0\,0\,0\.3\)\] {
-  display: none;
-}
-
-button.ml-2.mr-2.cursor-pointer.hover\:opacity-50,
-button.ml-2.cursor-pointer.hover\:opacity-50.pr-2 {
-  display: none;
-}
-
 /****begin responsive styling ***/
 @media (min-width: 1400px) {
   main {
@@ -499,7 +636,7 @@ button.ml-2.cursor-pointer.hover\:opacity-50.pr-2 {
   h1 {
     line-height: 1.1;
   }
-  .chat-input {
+  .dark .chat-input {
     background-color: var(--blue) !important;
   }
   .chat-input textarea {
@@ -515,8 +652,10 @@ button.ml-2.cursor-pointer.hover\:opacity-50.pr-2 {
   .w-\[280px\] {
     width: 100% !important;
     z-index: 10000;
-    background: var(--blue);
     opacity: 1;
+  }
+  .dark .w-\[280px\] {
+    background: var(--blue);
   }
   /***hide the user buttons on mobile***/
   .mt-1.ml-1.flex.flex-row.gap-1.bg-neutral-100.dark\:bg-\[\#202123\].rounded-t {
@@ -532,20 +671,50 @@ button.ml-2.cursor-pointer.hover\:opacity-50.pr-2 {
   .mantine-Paper-root .mantine-LoadingOverlay-root {
     display: none;
   }
-  .items-center.sticky.top-0.py-3.z-10.flex.justify-center.border.border-b-neutral-300.bg-neutral-100.text-sm.text-neutral-500.dark\:border-none.dark\:bg-\[\#444654\].dark\:text-neutral-200 {
-    color: var(--transparent);
+  button[title="Sign Out"] {
+    z-index: 100;
+    position: relative;
+  }
+  button[title="Sign Out"]:hover {
+    color: var(--gold);
+  }
+  button.text-sidebar,button[title="Create Folder"] {margin-top:0;}
+  .mantine-Paper-root .mantine-LoadingOverlay-root {display:none;}
+  
+  /*top sticky workspace bar*/
+  .top-workspace-bar {
+    color: var(--blue);
     position: fixed;
     justify-content: end;
-    padding-right: 24px;
-    background: var(--blue);
     height: 48px;
     left: 0;
     width: 100%;
+  }
+  .dark .top-workspace-bar { 
+    background: var(--blue)!important;
   }
   .relative.mx-2.flex.w-full.flex-grow.flex-col.rounded-md.bg-white.dark\:bg-\[\#40414F\].dark\:text-white.sm\:mx-4 {
     margin-top: -12px;
   }
   .group {
     max-width: 100% !important;
+  }
+  .light .fixed.top-0.left-0.flex.h-full.w-\[280px\].flex-none.border-r.dark\:border-r-\[\#202123\].flex-col.space-y-0.bg-white.text-black.dark\:text-white.bg-\[\#f3f3f3\].dark\:bg-\[\#202123\].text-\[14px\].sm\:relative.sm\:top-0 {
+    background: white;
+  }
+  /****share anything model.tsx*****/
+  .dark\:bg-\[\#22232b\] {
+    width:90%!important;
+    margin:0 auto; 
+  }
+  .dark\:bg-\[\#2b2c36\] .overflow-y-auto {
+    max-height: unset!important;
+  }
+  .dark\:bg-\[\#22232b\] .border.border-neutral-700 {
+    height:fit-content!important;
+    overflow-y: unset!important;
+  }
+  .top-workspace-bar .share-button {
+    display:block;
   }
 }

@@ -1042,7 +1042,8 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                         )}
                                          <div className="workspace-text">
                                         { !isArtifactOpen ? ` Workspace: ${workspaceMetadata.name} | `: '' } { selectedAssistant?.definition?.data?.model ? Models[selectedAssistant.definition.data.model as ModelID].name : selectedConversation?.model.name || ''} | {t('Temp')} : {selectedConversation?.temperature} |
-                                       </div>{/*<button
+                                       </div>
+                                        <button
                                             className="settings-button block text-blue-500 ml-2 cursor-pointer hover:opacity-50"
                                             onClick={(e) => {
                                                 e.preventDefault();
@@ -1059,7 +1060,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                             title="Chat Settings"
                                         >
                                             <IconSettings size={18}/>
-                                        </button>*/}
+                                        </button>
                                         
                                         <button
                                             className="clear-button ml-2 cursor-pointer hover:opacity-50"

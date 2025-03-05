@@ -1,4 +1,4 @@
-# Amplify
+# Amplify (See ChattUTC below for branding notes)
 
 # Prompting Language Documentation
 
@@ -117,3 +117,43 @@ OpenAI                                                                          
 If you have any questions, feel free to reach out to Mckay on [Twitter](https://twitter.com/mckaywrigley).
 
 [GCSE]: https://developers.google.com/custom-search/v1/overview
+
+# ChattUTC
+
+Updated 3/5/2025
+In order to limit the number of custom file changes, most .tsx files remain intact with the exception of a few that require customization. The custom branding take place mostly in the global.css and tailwindcss.config.js files, which affect the classes in untouched tsx files. This PR applies to dark mode only.
+
+### Affected Files
+
+**Package updates (2):**
+- package-lock.json
+- package.json
+
+**Customized file changes (13):**
+- amplify_tutorial_prompt.txt: _Name changed to ChattUTC and email change to ITHelp@utc.edu_
+- tailwind.config.js: _Brand colors and fonts_
+- home.tsx: _Name change, favicon, logo, login page, background images, etc._
+- Chat.tsx: _Hid some buttons to help with UX in the top bar navigation and added classes for clarification_
+- ChatMessage.tsx: _Power C icon_
+- ChatInput.tsx: _Name change, feature removals, class control for branding_
+- ChatLoader.tsx: _Power C icon, class control for mobile application_
+- ChatbarSettings.tsx: _Email changed to ITHelp@utc.edu along with subject "Feedback for ChattUTC". Hid "Manage Account" button_
+- Sidebar.tsx: _Branded UTC dotted arrow, branded separator, color change, unwanted features hidden, class control for branding_
+- KebabMenu.tsx: _Menu icon change, class control of submenus for branding_
+- OpenCloseButton.tsx: _Hide right sidebar_
+- PromptStatus.tsx:  _Class control for mobile application_
+- basePrompts.tsx:  _Changed "Amplify Helpers" to "ChattUTC Helpers" in the name and description_
+
+**Public folder additions (4):**
+- ai-stripes-animation.gif
+- chattutc-darkest-bg.jpg
+- chattutc-ligh-bg.jpg
+- favicon.ico
+
+**Custom Styles in styles folder (1):**
+globals.css: Includes using branding variables for consistency
+
+NOTE: If you are working on a M2 processor Mac, you may need to adjust the Dockerfile to avoid container errors. You may need to remove "--platform=linux/amd64 " from lines 2 and 24.
+
+Corrected code: 
+    `FROM node:lts-alpine3.20 AS base`

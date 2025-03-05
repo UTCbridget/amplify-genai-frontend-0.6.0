@@ -82,12 +82,12 @@ export const PromptStatus: React.FC<PromptStatusProps> = ({ status }) => {
                     setDetailsOpen(!detailsOpen);
                 }}
             >
-                <div className="flex flex-row">
+                <div className="flex flex-row flex-start w-full max-w-full">
                     <div
                         className="w-14 h-12 flex-none bg-cover rounded-l-xl text-center overflow-hidden"
                         style={{backgroundImage: getCoverBackgroundImage(status)}}
                     >
-                        <div className="text-white flex h-full w-full justify-center items-center">{getLeadingComponent(status)}</div>
+                        <div className="text-white flex h-full w-full max-w-full justify-center items-center">{getLeadingComponent(status)}</div>
                     </div>
                     <div className="mt-0 ml-3 flex flex-row p-0 truncate justify-center items-center">
                         <div className="mt-0 pt-0">

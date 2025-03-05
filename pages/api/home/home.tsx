@@ -1323,7 +1323,7 @@ const Home = ({
                         className={`main-3 flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
                     >
                     <div className="w-full h-full bg-[url('/chattutc-light-bg.jpg')] dark:bg-[url('/chattutc-darkest-bg.jpg')] bg-cover bg-right">
-                        <div className="fixed top-0 w-full hidden z-1">
+                        <div className="fixed top-0 w-full z-1">
                             <Navbar
                                 selectedConversation={selectedConversation}
                                 onNewConversation={handleNewConversation}

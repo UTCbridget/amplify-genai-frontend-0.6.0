@@ -75,7 +75,7 @@ export const PromptStatus: React.FC<PromptStatusProps> = ({ status }) => {
     return (
         <>
             <div
-                className="rounded-xl text-neutral-800 hover:opacity-50 dark:text-white bg-neutral-200 dark:bg-[#343541] rounded-md shadow-lg h-12 mb-2 mr-2"
+                className="rounded-xl text-neutral-800 hover:opacity-50 dark:text-white bg-neutral-200 dark:bg-[#343541] rounded-md shadow-lg h-12 mb-2 mr-2 w-px"
                 onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();

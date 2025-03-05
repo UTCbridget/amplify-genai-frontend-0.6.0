@@ -92,7 +92,7 @@ const Sidebar = <T,>({
 
     <div className={`sidebar-tsx border-t dark:border-white/20 overflow-x-hidden h-full `}>
       <div
-        className={`fixed top-0 ${side}-0 z-40 flex h-full w-full sm:w-[270px] flex-none flex-col space-y-2 bg-[#f3f3f3] dark:bg-[#202123] p-2 text-[14px] transition-all sm:relative sm:top-0 `}
+        className={`fixed top-0 ${side}-0 z-40 flex h-full w-full sm:w-[270px] flex-none flex-col space-y-2 bg-white sm:bg-transparent dark:bg-[#202123] p-2 text-[14px] transition-all sm:relative sm:top-0 `}
       >
         <div className="flex items-center">
           {addButtonForSide(side)}
@@ -117,9 +117,9 @@ const Sidebar = <T,>({
           handleSearchTerm={handleSearchTerm}
           setFolderSort={setFolderSort}
           />
-          <div className="relative flex-grow overflow-y-auto w-full sm:w-[268px]">
+          <div className="conversation-list relative flex-grow overflow-y-auto w-full sm:w-[268px]">
             {items?.length > 0 && (
-              <div className="flex border-b dark:border-white/20 pb-2 bg-transparent">
+              <div className="flex border-b dark:border-white/20 pb-2 bg-white dark:bg-blue-500 sm:bg-transparent sm:dark:bg-transparent">
                 {folderComponent}
               </div>
             )}

@@ -1021,10 +1021,10 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                     
 
                                     <div
-                                       className="items-center sticky top-0 py-3 z-10 flex justify-center border border-b-neutral-300 bg-neutral-100  text-sm text-neutral-500 dark:border-none dark:bg-[#444654] dark:text-neutral-200">
+                                       className="top-workspace-bar items-center sticky top-0 py-3 z-10 flex justify-center border border-b-neutral-300 bg-neutral-100  text-sm text-neutral-500 dark:border-none dark:bg-[#444654] dark:text-neutral-200">
                                         {featureFlags.mtdCost  && (
                                             <>
-                                                <button
+                                                {/* <button
                                                     className="ml-2 mr-2 cursor-pointer hover:opacity-50"
                                                     onClick={(e) => {
                                                         e.preventDefault();
@@ -1036,13 +1036,14 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                                     <div className="flex flex-row items-center text-[0.93rem] text-[#00a1d8] dark:text-[#8edffa]">
                                                         <div className="ml-1">MTD Cost: {mtdCost}</div>
                                                     </div>
-                                                </button>
-                                                |
+                                                </button> 
+                                                |*/}
                                             </>
                                         )}
-                                        { !isArtifactOpen ? `  Workspace: ${workspaceMetadata.name} | `: '' } { selectedAssistant?.definition?.data?.model ? Models[selectedAssistant.definition.data.model as ModelID].name : selectedConversation?.model.name || ''} | {t('Temp')} : {selectedConversation?.temperature} |
-                                        <button
-                                            className="ml-2 cursor-pointer hover:opacity-50"
+                                         <div className="workspace-text">
+                                        { !isArtifactOpen ? ` Workspace: ${workspaceMetadata.name} | `: '' } { selectedAssistant?.definition?.data?.model ? Models[selectedAssistant.definition.data.model as ModelID].name : selectedConversation?.model.name || ''} | {t('Temp')} : {selectedConversation?.temperature} |
+                                       </div>{/*<button
+                                            className="settings-button block text-blue-500 ml-2 cursor-pointer hover:opacity-50"
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
@@ -1058,24 +1059,24 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                             title="Chat Settings"
                                         >
                                             <IconSettings size={18}/>
-                                        </button>
+                                        </button>*/}
                                         
                                         <button
-                                            className="ml-2 cursor-pointer hover:opacity-50"
+                                            className="clear-button ml-2 cursor-pointer hover:opacity-50"
                                             onClick={onClearAll}
                                             title="Clear Messages"
                                         >
                                             <IconClearAll size={18}/>
                                         </button>
                                         <button
-                                            className="ml-2 cursor-pointer hover:opacity-50"
+                                            className="share-button ml-2 cursor-pointer hover:opacity-50"
                                             onClick={() => setIsShareDialogVisible(true)}
                                             title="Share"
                                         >
                                             <IconShare size={18}/>
                                         </button>
                                         <button
-                                            className="ml-2 cursor-pointer hover:opacity-50"
+                                            className="download-button ml-2 cursor-pointer hover:opacity-50"
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
@@ -1095,7 +1096,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                         }
                                         {!isArtifactOpen  &&
                                             <>
-                                            |
+                                            {/*|
                                             <button
                                                 className="ml-2 mr-2 cursor-pointer hover:opacity-50"
                                                 onClick={(e) => {
@@ -1109,14 +1110,14 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                                     <div><IconRocket size={18}/></div>
                                                     <div className="ml-1">Data Sources </div>
                                                 </div>
-                                            </button> 
+                                            </button>*/}
                                             </>
                                         }
                                     </div>
                                     <div ref={modelSelectRef}></div>
                                     
                                         <div
-                                            className="flex flex-col md:mx-auto md:max-w-xl md:gap-6 md:py-3 md:pt-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl ">
+                                            className="model-information flex flex-col md:mx-auto md:max-w-xl md:gap-6 md:py-3 md:pt-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl ">
                                             { showSettings && !(selectedAssistant?.definition?.data?.model) &&
                                                 <div
                                                     className="border-b border-neutral-200 p-4 dark:border-neutral-600 md:rounded-lg md:border shadow-[0_2px_4px_rgba(0,0,0,0.1)] dark:shadow-[0_2px_4px_rgba(0,0,0,0.3)]">

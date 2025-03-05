@@ -39,14 +39,14 @@ export const ChatbarSettings = () => {
             {/*    <ClearConversations onClearConversations={handleClearConversations}/>*/}
             {/*) : null}*/}
 
-            <SidebarButton
+            {/*<SidebarButton
                 text={t('Manage Accounts')}
                 icon={<IconSettings size={18} />}
                 onClick={() => {
                     //statsService.setThemeEvent();
                     setIsAccountDialogVisible(true)
                 }}
-            />
+            />*/}
 
             {featureFlags.assistantAdminInterface && 
                 <SidebarButton

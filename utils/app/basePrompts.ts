@@ -23,7 +23,7 @@ export const basePrompt = {
 "history": [], // conversations 
 "folders": [{  
                 "id": "amplify_helpers",
-                "name": "Amplify Helpers",
+                "name": "ChattUTC Helpers",
                 "type": "prompt"
 
             },
@@ -71,7 +71,7 @@ export const basePrompt = {
       {
         "id": "powerPoint_assistant",
         "name": "PowerPoint Assistant",
-        "description": "This set of custom instructions helps create slide outlines that can be exported using the Amplify slide templates. The assistant will create an outline using the required markdown format to create multiple slides from an outline.",
+        "description": "This set of custom instructions helps create slide outlines that can be exported using the ChattUTC slide templates. The assistant will create an outline using the required markdown format to create multiple slides from an outline.",
         "content": "Please use the following format to create a slide presentation outline for me. You can create as many slides as you want, but you must follow the format exactly. DO NOT OUPUT ANYTHING BEFORE the \"---\" or after the last slide. \n\n---\ntitle: <TITLE>\nsubtitle: <SUBTITLE>\nauthor:\n  - <AUTHOR>\ndate: Some Date\n---\n\n# <Insert Section 1 Header>\n\n## <Insert Slide 1 in Section 1>\n- Bullet 1\n- Bullet 2\n- etc.\n\n## <Insert Slide 2 in Section 1>\n- Bullet 1\n- Bullet 2\n- etc.\n\n## <Insert Slide 3 in Section 1>\n- Bullet 1\n- Bullet 2\n- etc.\n...\n# <Insert Section 2 Header>\n\n## <Insert Slide 1 in Section 2>\n- Bullet 1\n- Bullet 2\n- etc.\n\n## <Insert Slide 2 in Section 2>\n- Bullet 1\n- Bullet 2\n- etc.\n\n## <Insert Slide 3 in Section 2>\n- Bullet 1\n- Bullet 2\n- etc.\n....",
         "model": model,
         "folderId": "custom_instructions",

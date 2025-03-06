@@ -32,7 +32,7 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
   const initSettings: Settings = getSettings(featureFlags);
   const [featureOptions, setFeatureOptions] = useState<{ [key: string]: boolean }>(initSettings.featureOptions);
   const [modelOptions, setModelOptions] = useState<{ [key: string]: boolean }>(initSettings.modelOptions);
-  const [theme, setTheme] = useState<Theme>(initSettings.theme);  // Ensure default is dark if theme is undefined
+  const [theme, setTheme] = useState<Theme>(initSettings.theme); 
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState<boolean>(false);
   
   useEffect(() => {
@@ -48,6 +48,7 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
 
   }, [theme, featureOptions, modelOptions])
 
+//this code added 3/6/2025 to ensure the dark mode option is selected.
   useEffect(() => {
       setTheme('dark'); 
       homeDispatch({ field: 'lightMode', value: 'dark' });

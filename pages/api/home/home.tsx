@@ -938,7 +938,7 @@ const Home = ({
         if (settings.theme) {
             dispatch({
                 field: 'lightMode',
-                value: settings.theme,
+                value: 'dark',
             });
         }
 

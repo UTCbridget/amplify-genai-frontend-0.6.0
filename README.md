@@ -129,20 +129,22 @@ In order to limit the number of custom file changes, most .tsx files remain inta
 - package-lock.json
 - package.json
 
-**Customized file changes (13):**
+**Customized file changes (15):**
 - amplify_tutorial_prompt.txt: _Name changed to ChattUTC and email change to ITHelp@utc.edu_
-- tailwind.config.js: _Brand colors and fonts_
-- home.tsx: _Name change, favicon, logo, login page, background images, etc._
+- basePrompts.tsx:  _Changed "Amplify Helpers" to "ChattUTC Helpers" in the name and description_
 - Chat.tsx: _Hid some buttons to help with UX in the top bar navigation and added classes for clarification_
 - ChatMessage.tsx: _Power C icon_
 - ChatInput.tsx: _Name change, feature removals, class control for branding_
 - ChatLoader.tsx: _Power C icon, class control for mobile application_
 - ChatbarSettings.tsx: _Email changed to ITHelp@utc.edu along with subject "Feedback for ChattUTC". Hid "Manage Account" button_
-- Sidebar.tsx: _Branded UTC dotted arrow, branded separator, color change, unwanted features hidden, class control for branding_
+- globals.css: _Includes using branding variables for consistency_
+- home.tsx: _Name change, favicon, logo, login page, background images, default to dark mode, etc._
 - KebabMenu.tsx: _Menu icon change, class control of submenus for branding_
+- SettingDialog.tsx: _Ensures that when initial settings window is opened, the dark mode option is checked to match the default in home.tsx file._
 - OpenCloseButton.tsx: _Hide right sidebar_
 - PromptStatus.tsx:  _Class control for mobile application_
-- basePrompts.tsx:  _Changed "Amplify Helpers" to "ChattUTC Helpers" in the name and description_
+- Sidebar.tsx: _Branded UTC dotted arrow, branded separator, color change, unwanted features hidden, class control for branding_
+- tailwind.config.js: _Brand colors and fonts_
 
 **Public folder additions (4):**
 - ai-stripes-animation.gif
@@ -150,8 +152,7 @@ In order to limit the number of custom file changes, most .tsx files remain inta
 - chattutc-ligh-bg.jpg
 - favicon.ico
 
-**Custom Styles in styles folder (1):**
-globals.css: Includes using branding variables for consistency
+
 
 NOTE: If you are working on a M2 processor Mac, you may need to adjust the Dockerfile to avoid container errors. You may need to remove "--platform=linux/amd64 " from lines 2 and 24.
 

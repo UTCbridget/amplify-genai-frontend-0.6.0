@@ -935,10 +935,11 @@ const Home = ({
     useEffect(() => {
         const settings = getSettings(featureFlags);
 
+        //Changed 3/6/2025 to ensure default mode is dark
         if (settings.theme) {
             dispatch({
                 field: 'lightMode',
-                value: settings.theme,
+                value: 'dark',
             });
         }
 

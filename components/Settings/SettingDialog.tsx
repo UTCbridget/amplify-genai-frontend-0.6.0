@@ -30,12 +30,11 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
   const { t } = useTranslation('settings');
   const { dispatch: homeDispatch, state:{statsService, featureFlags, models} } = useContext(HomeContext);
   const initSettings: Settings = getSettings(featureFlags);
-
   const [featureOptions, setFeatureOptions] = useState<{ [key: string]: boolean }>(initSettings.featureOptions);
   const [modelOptions, setModelOptions] = useState<{ [key: string]: boolean }>(initSettings.modelOptions);
-  const [theme, setTheme] = useState<Theme>(initSettings.theme);
+  const [theme, setTheme] = useState<Theme>(initSettings.theme); 
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState<boolean>(false);
-
+  
   useEffect(() => {
     if (open) statsService.openSettingsEvent();
   }, [open])
@@ -49,6 +48,12 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
 
   }, [theme, featureOptions, modelOptions])
 
+//this code added 3/6/2025 to ensure the dark mode option is selected.
+  useEffect(() => {
+      setTheme('dark'); 
+      homeDispatch({ field: 'lightMode', value: 'dark' });
+  }, []);
+  
 
   const handleSave = async () => {
     if (theme !== initSettings.theme) statsService.setThemeEvent(theme);

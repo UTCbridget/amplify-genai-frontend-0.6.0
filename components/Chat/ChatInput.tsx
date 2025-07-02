@@ -597,7 +597,7 @@ const onAssistantChange = (assistant: Assistant) => {
             </div>
             }
         <div style={{width: chatContainerWidth}}
-            className="chat-input absolute border-t border-b bottom-0 left-0 border-blue-500/20 bg-white py-4 dark:bg-blue-500 dark:border-white/20 md:pt-2 z-15">
+            className="chat-input absolute border-t border-b bottom-0 left-0 border-blue-500/20 bg-white py-4 dark:bg-blue-600 dark:border-white/20 md:pt-2 z-15">
             
             
             <div
@@ -903,6 +903,7 @@ const onAssistantChange = (assistant: Assistant) => {
                         />
                     )}
                 </div>
+                <div className="ai-mistakes text-sm border border-yellow-500 py-2 px-1 text-center bg-blue-700 w-full text-gray-400">AI can make mistakes. Check important info. Need help? UTC Library Research Services are <a href="https://www.utc.edu/library/help/chattutc" title="library research services" className="text-sm underline hover:no-underline text-yellow-500 ">available here</a>.</div>
             </div>
 
         </div>

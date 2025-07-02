@@ -120,8 +120,10 @@ If you have any questions, feel free to reach out to Mckay on [Twitter](https://
 
 # ChattUTC
 
-Updated 3/5/2025
+Updated 7/2/2025
 In order to limit the number of custom file changes, most .tsx files remain intact with the exception of a few that require customization. The custom branding take place mostly in the global.css and tailwindcss.config.js files, which affect the classes in untouched tsx files. This PR applies to dark mode only.
+
+[New release v1.1](https://github.com/UTCWeb/amplify-genai-frontend-0.6.0/releases/tag/v1.1)
 
 ### Affected Files
 
@@ -132,9 +134,10 @@ In order to limit the number of custom file changes, most .tsx files remain inta
 **Customized file changes (15):**
 - amplify_tutorial_prompt.txt: _Name changed to ChattUTC and email change to ITHelp@utc.edu_
 - basePrompts.tsx:  _Changed "Amplify Helpers" to "ChattUTC Helpers" in the name and description_
-- Chat.tsx: _Hid some buttons to help with UX in the top bar navigation and added classes for clarification_
+- _document.tsx:  _added google brand fonts (Raleway, Oswald) as <link> in header to accommodate Windows 11_
+- Chat.tsx: _Hid some buttons to help with UX in the top bar navigation and added classes for clarification, added font-sans class to "Start a new conversation" div_
 - ChatMessage.tsx: _Power C icon_
-- ChatInput.tsx: _Name change, feature removals, class control for branding_
+- ChatInput.tsx: _Name change, feature removals, class control for branding, Library link added under the chat input field_
 - ChatLoader.tsx: _Power C icon, class control for mobile application_
 - ChatbarSettings.tsx: _Email changed to ITHelp@utc.edu along with subject "Feedback for ChattUTC". Hid "Manage Account" button_
 - globals.css: _Includes using branding variables for consistency_
